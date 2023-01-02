@@ -1,0 +1,64 @@
+/* Déclarations générales */
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    --general-font-color: rgb(48, 47, 47);
+    color: var(--general-font-color);
+    --header-bg-color: rgb(48, 47, 47);
+    --header-font-color: white;
+}
+
+/* 
+Force le calcul des dimensions des "boîtes" ou éléments de la page (box-sizing)
+par rapport à l'extérieur des bordures (border-box) et non par rapport au contenu (content-box) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1{
+    margin: 0;
+}
+
+/* exemple de lettrine */
+/*
+p::first-letter{
+    font-size: 2rem;
+    font-family : 'Times New Roman', Times, serif;
+    overflow:hidden;
+    width:75px;
+    height:75px;
+    float:left;
+    margin:0px 5px 1px 0;
+    background-image: url('../images/y-so-serious-white.png');
+}
+*/
+
+/* classes, pseudo classes et selecteurs id */
+
+/* sélecteurs selon la structure */
+
+body{
+    margin: 0;
+}
+
+body > header{
+    background-color: var(--header-bg-color);
+    color: var(--header-font-color);
+}
+
+body > footer{
+    background-color: var(--header-bg-color);
+    color: var(--header-font-color);
+}
+
+/* css adaptatif */
+/* usage de media queries */
+
+/* css pour l'impression des pages */
+/* usage de media queries */
