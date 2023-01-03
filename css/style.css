@@ -86,7 +86,7 @@ si 2em = 32 px, 1em = 16px
     --blanc-gundam: #F2F2F2;
     --noir-gundam: #0D0D0D;
     --gris-gundam: #625D73;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
     --general-font-color: var(--noir-gundam);
     color: var(--general-font-color);
@@ -95,7 +95,9 @@ si 2em = 32 px, 1em = 16px
     --heading-font: 'LEMONMILK';
     --header-text-shadow: var(--noir-gundam);
     --nav-bg-color: var(--gris-gundam);
+    --nav-bg-color-hover: var(--rouge-gundam);
     --nav-link-color: var(--blanc-gundam);
+    --nav-link-color-hover: var(--blanc-gundam);
 }
 
 /* 
@@ -175,12 +177,16 @@ body > header > div > *{
     margin: 0;
 }
 
+body > nav{
+    background-color: var(--nav-bg-color);
+}
+
 body > nav ul{
-    margin: 0;
+    margin: 0 auto;
     list-style-type: none;
     padding: 0;
     line-height: 2rem;
-    background-color: var(--nav-bg-color);
+    width: 100%;
 }
 
 body > nav a{
@@ -195,6 +201,19 @@ body > nav a:visited{
     color: var(--nav-link-color);
 }
 
+body > nav a:hover,
+body > nav a:focus{
+    background-color: var(--nav-bg-color-hover);
+}
+
+body > main{
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 body > footer{
     background-color: var(--header-bg-color);
     color: var(--header-font-color);
@@ -202,6 +221,114 @@ body > footer{
 
 /* css adaptatif */
 /* usage de media queries */
+/*
+
+les media queries permettent selon des valeurs de surrcharger du CSS existant ou d'ajouter des propriétés CSS
+aux éléments
+
+*/
+
+@media screen and (min-width: 576px){
+    
+    .homepage h1{
+        font-size: 3rem;
+    }
+    
+    /* dans un élément header avec la classe homepage, si un h2 fait partie de la descendance, j'applique */
+    body > header.homepage h2{
+        font-size: 2rem;
+    }
+
+    body > main,
+    body > nav ul{
+        max-width: 540px;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .homepage h1{
+        font-size: 3.5rem;
+    }
+    
+    body > header.homepage h2{
+        font-size: 2.5rem;
+    }
+
+    body > main,
+    body > nav ul{
+        max-width: 720px;
+    }
+
+    body > nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    body > nav a{
+        padding-right: 1rem;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .homepage h1{
+        font-size: 4rem;
+    }
+    
+    body > header.homepage h2{
+        font-size: 3rem;
+    }
+
+    body > main,
+    body > nav ul{
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .homepage h1{
+        font-size: 4.5rem;
+    }
+    
+    body > header.homepage h2{
+        font-size: 3.5rem;
+    }
+
+    body > main,
+    body > nav ul{
+        max-width: 1140px;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .homepage h1{
+        font-size: 5rem;
+    }
+    
+    body > header.homepage h2{
+        font-size: 4rem;
+    }
+
+    body > main,
+    body > nav ul{
+        max-width: 1320px;
+    }
+}
+
+@media screen and (min-width: 1600px){
+    .homepage h1{
+        font-size: 5.5rem;
+    }
+    
+    body > header.homepage h2{
+        font-size: 4.5rem;
+    }
+
+    body > main,
+    body > nav ul{
+        max-width: 1500px;
+    }
+}
 
 /* css pour l'impression des pages */
 /* usage de media queries */
