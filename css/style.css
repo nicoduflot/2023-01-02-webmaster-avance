@@ -340,14 +340,11 @@ aux éléments
         flex-wrap: wrap;
         justify-content: space-between;
     }
-
+    
     body > main > section > *{
         width: var(--col-1-2);
         margin: var(--y-gutter) var(--x-gutter);
     }
-
-
-
 }
 
 @media screen and (min-width: 1200px){
@@ -363,6 +360,11 @@ aux éléments
     body > nav ul, 
     body > footer > *{
         max-width: 1140px;
+    }
+
+    body > main > section > *{
+        width: var(--col-1-3);
+        margin: var(--y-gutter) var(--x-gutter);
     }
 }
 
