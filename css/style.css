@@ -260,6 +260,10 @@ body > main > section > *{
     border-radius: var(--elt-sct-border-radius);
 }
 
+article.article{
+    width: var(--col-1-1);
+    margin: var(--y-gutter) var(--x-gutter);
+}
 
 /* css adaptatif */
 /* usage de media queries */
@@ -399,6 +403,8 @@ aux éléments
         max-width: 1500px;
     }
 }
+
+
 
 /* css pour l'impression des pages */
 /* usage de media queries */
