@@ -98,6 +98,21 @@ si 2em = 32 px, 1em = 16px
     --nav-bg-color-hover: var(--rouge-gundam);
     --nav-link-color: var(--blanc-gundam);
     --nav-link-color-hover: var(--blanc-gundam);
+    --nav-ul-line-height: 2.2rem;
+    /* largeur de goutière */
+    --x-gutter: 0.5rem;
+    --y-gutter: 0.5rem;
+    /* largeur de colonnes */
+    --col-1-1: calc( 100% - 2 * var(--x-gutter)  );
+    --col-1-2: calc(  50% - 2 * var(--x-gutter)  );
+    --col-1-3: calc(  33% - 2 * var(--x-gutter)  );
+    --col-2-3: calc(  66% - 2 * var(--x-gutter)  );
+    --col-1-4: calc(  25% - 2 * var(--x-gutter)  );
+    --col-3-4: calc(  75% - 2 * var(--x-gutter)  );
+    /* éléments enfants directs de section : elt-sct */
+    --elt-sct-border-color: var(--gris-gundam);
+    --elt-sct-border-width: 2px;
+    --elt-sct-border-radius: 5px;
 }
 
 /* 
@@ -167,7 +182,7 @@ body > header{
 }
 
 body > header.homepage{
-    height: calc( 100vh - 2rem ) ;
+    height: calc( 100vh - var(--nav-ul-line-height) ) ;
 }
 
 body > header > div > *{
@@ -185,7 +200,7 @@ body > nav ul{
     margin: 0 auto;
     list-style-type: none;
     padding: 0;
-    line-height: 2rem;
+    line-height: var(--nav-ul-line-height);
     width: 100%;
 }
 
@@ -206,7 +221,8 @@ body > nav a:focus{
     background-color: var(--nav-bg-color-hover);
 }
 
-body > main{
+body > main, 
+body > footer > *{
     width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -218,6 +234,32 @@ body > footer{
     background-color: var(--header-bg-color);
     color: var(--header-font-color);
 }
+
+body > footer ul{
+    list-style-type: none;
+    line-height: var(--nav-ul-line-height);
+}
+
+body > footer ul a, 
+body > footer ul a:visited{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--nav-link-color);
+}
+
+body > footer ul a:hover,
+body > footer ul a:focus{
+    color: var(--orange-gundam);
+}
+
+body > main > section > *{
+    border-width: var(--elt-sct-border-width);
+    border-style: solid;
+    border-color: var(--elt-sct-border-color);
+    border-radius: var(--elt-sct-border-radius);
+}
+
 
 /* css adaptatif */
 /* usage de media queries */
@@ -240,8 +282,15 @@ aux éléments
     }
 
     body > main,
-    body > nav ul{
+    body > nav ul, 
+    body > footer > *{
         max-width: 540px;
+    }
+
+    body > footer > *{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
 
@@ -255,7 +304,8 @@ aux éléments
     }
 
     body > main,
-    body > nav ul{
+    body > nav ul, 
+    body > footer > *{
         max-width: 720px;
     }
 
@@ -280,9 +330,24 @@ aux éléments
     }
 
     body > main,
-    body > nav ul{
+    body > nav ul, 
+    body > footer > *{
         max-width: 960px;
     }
+
+    body > main > section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    body > main > section > *{
+        width: var(--col-1-2);
+        margin: var(--y-gutter) var(--x-gutter);
+    }
+
+
+
 }
 
 @media screen and (min-width: 1200px){
@@ -295,7 +360,8 @@ aux éléments
     }
 
     body > main,
-    body > nav ul{
+    body > nav ul, 
+    body > footer > *{
         max-width: 1140px;
     }
 }
@@ -310,7 +376,8 @@ aux éléments
     }
 
     body > main,
-    body > nav ul{
+    body > nav ul, 
+    body > footer > *{
         max-width: 1320px;
     }
 }
@@ -325,7 +392,8 @@ aux éléments
     }
 
     body > main,
-    body > nav ul{
+    body > nav ul, 
+    body > footer > *{
         max-width: 1500px;
     }
 }
