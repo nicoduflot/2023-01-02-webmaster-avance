@@ -1,26 +1,101 @@
-/* Déclarations générales */
+@import url('./LEMONMILKRegular.css');
+/*
+tous les imports de css dans un autre CSS sont a déclarer ABSOLUMENT en début de fichier
+*/
+
+/*
+Commentaire en CSS
+
+Sur cette feuille de style, on déclare les propriétés CSS que l'on appliquera à divers éléments de la page 
+html à laquelle cette feuille est liée (link)
+
+Le CSS (Cascading Style Sheet) ou Feuille de Style en Cascade fonctionne par héritage : 
+ce qui est déclaré pour une balise, sera par défaut reçu en héritage
+par les balises qu'elle contient.
+
+<body>
+    <header>
+        <h1>Titre</h1>
+    </header>
+</body>
+
+si je déclare la police de caractère Arial pour body, automatiquement header et h1 utiliseront aussi cette police (héritage).
+
+Si je voulais que h1 utilise une autre police, je dois créer une règles CSS précisant la police qui serautilisée par h1
+
+Le CSS s'applique sur les éléments HTML à l'aide de sélecteurs
+
+on peut décrire un sélécteur à l'aide des balises impactés, ou par des classes appliquées à un élément, ou en utilisant un identifiant d'élément
+
+On peut même combiner toutes ces manières pour être très précis dans les éléments qui seront impactés par les déclarations CSS
+
+une classe est préfixée d'un point
+.rouge-gras => la classe qui s'appelle "rouge-gras" dans l'élément l'attribut utilisé class="rouge-gras"
+
+On peut aussi sélectionner un élément par son identifiant (attribut id)
+un ID, quant il est appelé en sélecteur CSS, est préfixé d'un #
+#navigation-principale => l'élément de la page qui possède id="navigation-principale"
+
+Au niveau de la sélection par balise, il existe une sorte de décriture qui différencie les descendants directs d'éléments aux descendant plus ou moins directs d'un élément
+
+body > nav => les éléments html <nav> enfant directs (fils ou fille) de l'élément body
+<body>
+    <nav>
+        <!-- cet élément est impacté => fils direct de body -->
+    </nav>
+    <main>
+        <nav>
+            <!-- cet élément n'est pas impacté  => petit fils de body-->
+        </nav>
+    </main>
+</body>
+
+body nav => les éléments html <nav> enfant directs ou indirects (fils ou fille, petit fils, arrière ) de l'élément body
+<body>
+    <nav>
+        <!-- cet élément est impacté => fils direct de body -->
+    </nav>
+    <main>
+        <nav>
+            <!-- cet élément n'est pas impacté  => petit fils de body-->
+        </nav>
+    </main>
+</body>
+
+*/
+
 
 /*
 dimension les plus vues en web :
 px      =>  Pixel
 em      =>  cadratin : unité de mesure en print sur les presses
-            le cadratin se calcul par rapport à son parent
+le cadratin se calcul par rapport à son parent
 rem     =>  cadratin racine : se calcul par rapport à la taille racine de police
 %       =>  pourcentage, se calcule par rapport à l'élément qui le contient
 vw & vh =>  viewport width & viewport height : correspond à la taille 
-            d'affichage de la page en largeur et en hauteur
-            si affichage en largeur 768px alors 20vw = 153.6 px
+d'affichage de la page en largeur et en hauteur
+si affichage en largeur 768px alors 20vw = 153.6 px
 
 si 2em = 32 px, 1em = 16px
 */
 
+/* Déclarations générales */
 :root {
+    --rouge-gundam: #BF3636;
+    --orange-gundam: #D99E30;
+    --blanc-gundam: #F2F2F2;
+    --noir-gundam: #0D0D0D;
+    --gris-gundam: #625D73;
     font-size: 1.1rem;
     font-family: Arial, Helvetica, sans-serif;
-    --general-font-color: rgb(48, 47, 47);
+    --general-font-color: var(--noir-gundam);
     color: var(--general-font-color);
-    --header-bg-color: rgb(48, 47, 47);
-    --header-font-color: white;
+    --header-bg-color: var(--gris-gundam);
+    --header-font-color: var(--blanc-gundam);
+    --heading-font: 'LEMONMILK';
+    --header-text-shadow: var(--noir-gundam);
+    --nav-bg-color: var(--gris-gundam);
+    --nav-link-color: var(--blanc-gundam);
 }
 
 /* 
@@ -34,6 +109,15 @@ par rapport à l'extérieur des bordures (border-box) et non par rapport au cont
 
 img {
   max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: var(--heading-font);
 }
 
 /* exemple de lettrine */
@@ -69,23 +153,46 @@ body{
 body > header{
     background-color: var(--header-bg-color);
     color: var(--header-font-color);
-    height: 20vh;
     display: flex;
+    height: 25vh;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    height: 100vh;
     background-image: url('../images/gundam-01-header.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
+body > header.homepage{
+    height: calc( 100vh - 2rem ) ;
+}
+
 body > header > div > *{
-    text-shadow: 0 0 10px black ;
+    text-shadow: 0 0 10px var(--header-bg-color) ;
     width: 100%;
     text-align: center;
     margin: 0;
+}
+
+body > nav ul{
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    line-height: 2rem;
+    background-color: var(--nav-bg-color);
+}
+
+body > nav a{
+    display: block;
+    padding-left: 1rem;
+}
+
+body > nav a,
+body > nav a:visited{
+    font-family: var(--heading-font);
+    text-decoration: none;
+    color: var(--nav-link-color);
 }
 
 body > footer{
