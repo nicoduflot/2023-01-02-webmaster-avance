@@ -86,6 +86,9 @@ si 2em = 32 px, 1em = 16px
     --blanc-gundam: #F2F2F2;
     --noir-gundam: #0D0D0D;
     --gris-gundam: #625D73;
+    --gris-gundam-50p: rgba(98, 93, 115, 0.5);
+    --gris-gundam-25p: rgba(98, 93, 115, 0.25);
+    --gris-gundam-125p: rgba(98, 93, 115, 0.125);
     font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
     --general-font-color: var(--noir-gundam);
@@ -99,6 +102,8 @@ si 2em = 32 px, 1em = 16px
     --nav-link-color: var(--blanc-gundam);
     --nav-link-color-hover: var(--blanc-gundam);
     --nav-ul-line-height: 2.2rem;
+    --main-link-color: var(--rouge-gundam);
+    --main-link-color-hover: var(--orange-gundam);
     /* largeur de goutière */
     --x-gutter: 0.5rem;
     --y-gutter: 0.5rem;
@@ -113,6 +118,7 @@ si 2em = 32 px, 1em = 16px
     --elt-sct-border-color: var(--gris-gundam);
     --elt-sct-border-width: 2px;
     --elt-sct-border-radius: 5px;
+    --aside-article-bg: var(--gris-gundam-125p);
 }
 
 /* 
@@ -151,6 +157,33 @@ p::first-letter{
 }
 */
 
+article aside{
+ background-color: var(--aside-article-bg);
+ padding: 0.2rem;
+ width: var(--col-1-1);
+ border-radius: var(--elt-sct-border-radius);
+}
+
+article aside table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+article aside table th{
+    text-align: left;
+    vertical-align:top;
+}
+
+article aside table th,
+article aside table td{
+    padding: 0.5rem;
+}
+
+article aside table tr:nth-child(odd){
+    background-color: var(--gris-gundam-25p);
+}
+
+
 /* classes, pseudo classes et selecteurs id */
 
 .deuxEm{
@@ -159,6 +192,48 @@ p::first-letter{
 
 .deuxRem{
     font-size: 2rem;
+}
+
+
+.right{
+    float: right;
+    margin: 0 1rem;
+}
+
+.left{
+    float: left;
+    margin: 0 1rem;
+}
+
+.clear{
+    clear: both;
+}
+
+a, a:visited{
+    text-decoration: none;
+    color: var(--main-link-color);
+    font-weight: bold;
+}
+
+a:hover{
+    color: var(--main-link-color-hover);
+}
+
+.figure-article{
+    width: var(--col-1-3);
+}
+
+table.box-office{
+    border-collapse: collapse;
+}
+
+table.box-office thead,
+table.box-office tfoot{
+    background-color: var(--aside-article-bg);
+}
+
+table.box-office td{
+
 }
 
 /* sélecteurs selon la structure */
@@ -263,6 +338,7 @@ body > main > section > *{
 article.article{
     width: var(--col-1-1);
     margin: var(--y-gutter) var(--x-gutter);
+    padding: 1rem;
 }
 
 /* css adaptatif */
@@ -296,6 +372,7 @@ aux éléments
         flex-wrap: wrap;
         justify-content: space-between;
     }
+
 }
 
 @media screen and (min-width: 768px){
@@ -321,6 +398,14 @@ aux éléments
 
     body > nav a{
         padding-right: 1rem;
+    }
+
+    article aside{
+        width: var(--col-1-2);
+       }
+
+       .liste-c{
+        column-count: 2;
     }
 }
 
@@ -349,6 +434,10 @@ aux éléments
         width: var(--col-1-2);
         margin: var(--y-gutter) var(--x-gutter);
     }
+
+    article aside{
+        width: var(--col-1-3);
+       }
 }
 
 @media screen and (min-width: 1200px){
@@ -369,6 +458,10 @@ aux éléments
     body > main > section > *{
         width: var(--col-1-3);
         margin: var(--y-gutter) var(--x-gutter);
+    }
+
+    .liste-c{
+        column-count: 3;
     }
 }
 
@@ -402,6 +495,10 @@ aux éléments
     body > footer > *{
         max-width: 1500px;
     }
+
+    article aside{
+        width: var(--col-1-4);
+       }
 }
 
 
