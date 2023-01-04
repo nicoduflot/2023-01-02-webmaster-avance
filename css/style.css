@@ -1,4 +1,5 @@
 @import url('./LEMONMILKRegular.css');
+@import url('./bootstrap-icons.css');
 /*
 tous les imports de css dans un autre CSS sont a déclarer ABSOLUMENT en début de fichier
 */
@@ -182,312 +183,503 @@ p::first-letter{
 }
 */
 
-article aside{
- background-color: var(--aside-article-bg);
- padding: 0.2rem;
- width: var(--col-1-1);
- border-radius: var(--elt-sct-border-radius);
-}
-
-article aside h3,
-article aside figure{
-    text-align: center;
-}
-
-article aside table{
-    border-collapse:collapse;
-    width: 100%;
-}
-
-article aside table caption{
-    text-transform: uppercase;
-    font-weight: bold;
-    background-color: var(--rouge-gundam);
-    color: var(--blanc-gundam);
-    padding: 5px;
-}
-
-article aside table th{
-    text-align: left;
-    vertical-align:top;
-}
-
-article aside table th,
-article aside table td{
-    padding: 0.5rem;
-}
-
-/* 
-les lignes dans le tableau qui sont impaire 
-tr:nth-child(odd)
-
-tr => ligne
-nth-child() => tous les n éléments cités (ici la ligne tr)
-odd => impaire
-
-si on veux le faire sur les éléments paire => even
-
-si on veux tous les 3 éléments, 3n 
-
-si 3n + 1
-tous les trois éléments en commençant par la prmière ligne
-
-si n = 0
- 3*0 + 1 donc la ligne 1
-
- si 3n + 2
-tous les trois éléments en commençant par la deuxième ligne
-
-si n = 0
- 3*0 + 2 donc la ligne 2
-
-quand on utilise n, 2n correspond à paire, 2n + 1 correspond à impaire
-
-*/
-article aside table tr:nth-child(odd){
-    background-color: var(--gris-gundam-25p);
-}
-
-
-/* classes, pseudo classes et selecteurs id */
-
-.deuxEm{
-    font-size: 2em;
-}
-
-.deuxRem{
-    font-size: 2rem;
-}
-
-
-.right{
-    float: right;
-    margin: 0 1rem;
-}
-
-.left{
-    float: left;
-    margin: 0 1rem;
-}
-
-.clear{
-    clear: both;
-}
-
-main a, main a:visited{
-    text-decoration: none;
-    color: var(--main-link-color);
-    font-weight: bold;
-}
-
-main a:hover{
-    color: var(--main-link-color-hover);
-}
-
-.figure-article{
-    width: var(--col-1-3);
-}
-
-table.box-office{
-    border-collapse: collapse;
-}
-
-table.box-office thead,
-table.box-office tfoot{
-    background-color: var(--aside-article-bg);
-}
-
-table.box-office td{
-    vertical-align: top;
-    padding: 5px;
-}
-
-/* sélecteurs selon la structure */
-
-body{
-    margin: 0;
-}
-
-body > header{
-    background-color: var(--header-bg-color);
-    color: var(--header-font-color);
-    display: flex;
-    height: 25vh;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background-image: url('../images/gundam-01-header.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-
-body > header.homepage{
-    height: calc( 100vh - var(--nav-ul-line-height) ) ;
-}
-
-body > header > div > *{
-    text-shadow: 0 0 10px var(--header-bg-color) ;
-    width: 100%;
-    text-align: center;
-    margin: 0;
-}
-
-body > nav{
-    background-color: var(--nav-bg-color);
-}
-
-body > nav ul{
-    margin: 0 auto;
-    list-style-type: none;
-    padding: 0;
-    line-height: var(--nav-ul-line-height);
-    width: 100%;
-}
-
-body > nav a{
-    display: block;
-    padding-left: 1rem;
-}
-
-body > nav a,
-body > nav a:visited{
-    font-family: var(--heading-font);
-    text-decoration: none;
-    color: var(--nav-link-color);
-}
-
-body > nav a:hover,
-body > nav a:focus{
-    background-color: var(--nav-bg-color-hover);
-}
-
-body > main, 
-body > footer > *{
-    width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-body > footer{
-    background-color: var(--header-bg-color);
-    color: var(--header-font-color);
-}
-
-body > footer ul{
-    list-style-type: none;
-    line-height: var(--nav-ul-line-height);
-}
-
-body > footer ul a, 
-body > footer ul a:visited{
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: var(--nav-link-color);
-}
-
-body > footer ul a:hover,
-body > footer ul a:focus{
-    color: var(--orange-gundam);
-}
-
-body > main > section > *{
-    border-width: var(--elt-sct-border-width);
-    border-style: solid;
-    border-color: var(--elt-sct-border-color);
-    border-radius: var(--elt-sct-border-radius);
-}
-
-article.article{
-    width: var(--col-1-1);
-    margin: var(--y-gutter) var(--x-gutter);
-    padding: 1rem;
-}
-
-/* css adaptatif */
-/* usage de media queries */
-/*
-
-les media queries permettent selon des valeurs de surrcharger du CSS existant ou d'ajouter des propriétés CSS
-aux éléments
-
-*/
-
-@media screen and (min-width: 576px){
-    
-    .homepage h1{
-        font-size: 3rem;
+@media screen{
+    article aside{
+     background-color: var(--aside-article-bg);
+     padding: 0.2rem;
+     width: var(--col-1-1);
+     border-radius: var(--elt-sct-border-radius);
     }
     
-    /* dans un élément header avec la classe homepage, si un h2 fait partie de la descendance, j'applique */
-    body > header.homepage h2{
+    article aside h3,
+    article aside figure{
+        text-align: center;
+    }
+    
+    article aside table{
+        border-collapse:collapse;
+        width: 100%;
+    }
+    
+    article aside table caption{
+        text-transform: uppercase;
+        font-weight: bold;
+        background-color: var(--rouge-gundam);
+        color: var(--blanc-gundam);
+        padding: 5px;
+    }
+    
+    article aside table th{
+        text-align: left;
+        vertical-align:top;
+    }
+    
+    article aside table th,
+    article aside table td{
+        padding: 0.5rem;
+    }
+    
+    /* 
+    les lignes dans le tableau qui sont impaire 
+    tr:nth-child(odd)
+    
+    tr => ligne
+    nth-child() => tous les n éléments cités (ici la ligne tr)
+    odd => impaire
+    
+    si on veux le faire sur les éléments paire => even
+    
+    si on veux tous les 3 éléments, 3n 
+    
+    si 3n + 1
+    tous les trois éléments en commençant par la prmière ligne
+    
+    si n = 0
+     3*0 + 1 donc la ligne 1
+    
+     si 3n + 2
+    tous les trois éléments en commençant par la deuxième ligne
+    
+    si n = 0
+     3*0 + 2 donc la ligne 2
+    
+    quand on utilise n, 2n correspond à paire, 2n + 1 correspond à impaire
+    
+    */
+    article aside table tr:nth-child(odd){
+        background-color: var(--gris-gundam-25p);
+    }
+    
+    
+    /* classes, pseudo classes et selecteurs id */
+    
+    .deuxEm{
+        font-size: 2em;
+    }
+    
+    .deuxRem{
         font-size: 2rem;
     }
-
-    body > main,
-    body > nav ul, 
-    body > footer > *{
-        max-width: 540px;
-    }
-
-    body > footer > *{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-}
-
-@media screen and (min-width: 768px){
-    .homepage h1{
-        font-size: 3.5rem;
+    
+    
+    .right{
+        float: right;
+        margin: 0 1rem;
     }
     
-    body > header.homepage h2{
-        font-size: 2.5rem;
+    .left{
+        float: left;
+        margin: 0 1rem;
+    }
+    
+    .clear{
+        clear: both;
+    }
+    
+    main a, main a:visited{
+        text-decoration: none;
+        color: var(--main-link-color);
+        font-weight: bold;
+    }
+    
+    main a:hover{
+        color: var(--main-link-color-hover);
+    }
+    
+    .figure-article{
+        width: var(--col-1-3);
+    }
+    
+    table.box-office{
+        border-collapse: collapse;
+    }
+    
+    table.box-office thead,
+    table.box-office tfoot{
+        background-color: var(--aside-article-bg);
+    }
+    
+    table.box-office td{
+        vertical-align: top;
+        padding: 5px;
     }
 
-    body > main,
-    body > nav ul, 
-    body > footer > *{
-        max-width: 720px;
+    .darkred{
+        color: darkred;
     }
 
+    .espace-animation{
+        width: 100%;
+        position: relative;
+        padding-bottom: 30%;
+        border: 2px solid var(--orange-gundam);
+    }
+
+    .cercle-animation{
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        font-size: 85px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+    .animation{
+        position: absolute;
+        /*
+        animation: name duration timing-function delay iteration-count direction fill-mode play-state
+        */
+        animation-name: fleche-qui-bouge;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+
+    /* 
+    keyframe est là pour déclarer les images clefs de l'animation de l'élément, de 0% à 100% du temps déclaré pour l'animation 
+    à chaque image clef, on défini des transformation ou des placement dans la page, l'animation "produit" les "images" intervale pour 
+    aller d'un état à l'autre
+    */
+
+    @keyframes fleche-qui-bouge{
+        0%{
+            /* l'animation commence en haut à gauche du cadre à 0s (0% de 3s) */
+            left: 0%;
+            top: 0%;
+            transform: rotate(0deg);
+        }
+        50%{
+            /* l'animation arrive en haut à droite du cadre à 1.5s (50% de 3s) */
+            left: calc(100% - 100px);
+            top: 50%;
+            transform: rotate(180deg);
+        }
+        80%{
+            left: 0%;
+            top: 25%;
+            transform: rotate(-180deg);
+        }
+        100%{
+            /* l'animation fini en haut à gauche du cadre à 3s (100% de 3s) */
+            left: 0%;
+            top: 0%;
+        }
+    }
+
+    /* début pixel art to css + animation */
+
+    .pixelart-to-css {
+        position: absolute;
+        animation: x 1s infinite;
+        -webkit-animation: x 1s infinite;
+        -moz-animation: x 1s infinite;
+        -o-animation: x 1s infinite;
+      }
+      
+      @keyframes x {
+      0%, 50%{
+        box-shadow: 18px 12px 0 0 rgba(0, 0, 0, 1), 18px 13px 0 0 rgba(0, 0, 0, 1), 16px 15px 0 0 rgba(0, 0, 0, 1), 15px 16px 0 0 rgba(0, 0, 0, 1), 17px 16px 0 0 rgba(0, 0, 0, 1), 10px 19px 0 0 rgba(0, 0, 0, 1), 11px 19px 0 0 rgba(0, 0, 0, 1), 12px 19px 0 0 rgba(0, 0, 0, 1), 17px 19px 0 0 rgba(0, 0, 0, 1), 9px 20px 0 0 rgba(0, 0, 0, 1), 10px 20px 0 0 rgba(0, 0, 0, 1), 8px 21px 0 0 rgba(0, 0, 0, 1), 17px 21px 0 0 rgba(0, 0, 0, 1), 7px 22px 0 0 rgba(0, 0, 0, 1), 9px 22px 0 0 rgba(0, 0, 0, 1), 18px 22px 0 0 rgba(0, 0, 0, 1), 6px 23px 0 0 rgba(0, 0, 0, 1), 9px 23px 0 0 rgba(0, 0, 0, 1), 6px 24px 0 0 rgba(0, 0, 0, 1), 21px 24px 0 0 rgba(0, 0, 0, 1), 24px 24px 0 0 rgba(0, 0, 0, 1), 6px 25px 0 0 rgba(0, 0, 0, 1), 26px 25px 0 0 rgba(0, 0, 0, 1), 27px 25px 0 0 rgba(0, 0, 0, 1), 28px 26px 0 0 rgba(0, 0, 0, 1), 6px 27px 0 0 rgba(0, 0, 0, 1), 30px 27px 0 0 rgba(0, 0, 0, 1), 6px 28px 0 0 rgba(0, 0, 0, 1), 30px 28px 0 0 rgba(0, 0, 0, 1), 6px 29px 0 0 rgba(0, 0, 0, 1), 31px 29px 0 0 rgba(0, 0, 0, 1), 32px 30px 0 0 rgba(0, 0, 0, 1), 6px 31px 0 0 rgba(0, 0, 0, 1), 7px 31px 0 0 rgba(0, 0, 0, 1), 8px 31px 0 0 rgba(0, 0, 0, 1), 6px 32px 0 0 rgba(0, 0, 0, 1), 7px 32px 0 0 rgba(0, 0, 0, 1), 9px 32px 0 0 rgba(0, 0, 0, 1), 10px 32px 0 0 rgba(0, 0, 0, 1), 33px 32px 0 0 rgba(0, 0, 0, 1), 6px 33px 0 0 rgba(0, 0, 0, 1), 7px 33px 0 0 rgba(0, 0, 0, 1), 11px 33px 0 0 rgba(0, 0, 0, 1), 33px 33px 0 0 rgba(0, 0, 0, 1), 6px 34px 0 0 rgba(0, 0, 0, 1), 7px 34px 0 0 rgba(0, 0, 0, 1), 11px 34px 0 0 rgba(0, 0, 0, 1), 12px 34px 0 0 rgba(0, 0, 0, 1), 33px 34px 0 0 rgba(0, 0, 0, 1), 7px 35px 0 0 rgba(0, 0, 0, 1), 12px 35px 0 0 rgba(0, 0, 0, 1), 13px 35px 0 0 rgba(0, 0, 0, 1), 14px 35px 0 0 rgba(0, 0, 0, 1), 17px 35px 0 0 rgba(0, 0, 0, 1), 20px 35px 0 0 rgba(0, 0, 0, 1), 24px 35px 0 0 rgba(0, 0, 0, 1), 27px 35px 0 0 rgba(0, 0, 0, 1), 29px 35px 0 0 rgba(0, 0, 0, 1), 30px 35px 0 0 rgba(0, 0, 0, 1), 31px 35px 0 0 rgba(0, 0, 0, 1), 32px 35px 0 0 rgba(0, 0, 0, 1), 33px 35px 0 0 rgba(0, 0, 0, 1), 6px 36px 0 0 rgba(0, 0, 0, 1), 7px 36px 0 0 rgba(0, 0, 0, 1);height: 1px; width: 1px;
+        }
+      50.01%, 100%{
+        box-shadow: 20px 7px 0 0 rgba(0, 0, 0, 1), 22px 7px 0 0 rgba(0, 0, 0, 1), 28px 7px 0 0 rgba(0, 0, 0, 1), 16px 8px 0 0 rgba(0, 0, 0, 1), 31px 9px 0 0 rgba(0, 0, 0, 1), 14px 10px 0 0 rgba(0, 0, 0, 1), 33px 10px 0 0 rgba(0, 0, 0, 1), 34px 13px 0 0 rgba(0, 0, 0, 1), 12px 14px 0 0 rgba(0, 0, 0, 1), 34px 16px 0 0 rgba(0, 0, 0, 1), 34px 17px 0 0 rgba(0, 0, 0, 1), 12px 18px 0 0 rgba(0, 0, 0, 1), 33px 18px 0 0 rgba(0, 0, 0, 1), 33px 19px 0 0 rgba(0, 0, 0, 1), 33px 20px 0 0 rgba(0, 0, 0, 1), 34px 20px 0 0 rgba(0, 0, 0, 1), 36px 20px 0 0 rgba(0, 0, 0, 1), 38px 20px 0 0 rgba(0, 0, 0, 1), 40px 20px 0 0 rgba(0, 0, 0, 1), 41px 20px 0 0 rgba(0, 0, 0, 1), 42px 20px 0 0 rgba(0, 0, 0, 1), 43px 20px 0 0 rgba(0, 0, 0, 1), 34px 21px 0 0 rgba(0, 0, 0, 1), 35px 21px 0 0 rgba(0, 0, 0, 1), 44px 21px 0 0 rgba(0, 0, 0, 1), 11px 22px 0 0 rgba(0, 0, 0, 1), 45px 22px 0 0 rgba(0, 0, 0, 1), 45px 23px 0 0 rgba(0, 0, 0, 1), 45px 25px 0 0 rgba(0, 0, 0, 1), 11px 26px 0 0 rgba(0, 0, 0, 1), 44px 28px 0 0 rgba(0, 0, 0, 1), 44px 29px 0 0 rgba(0, 0, 0, 1), 11px 31px 0 0 rgba(0, 0, 0, 1), 43px 31px 0 0 rgba(0, 0, 0, 1), 30px 33px 0 0 rgba(0, 0, 0, 1), 31px 33px 0 0 rgba(0, 0, 0, 1), 32px 33px 0 0 rgba(0, 0, 0, 1), 33px 33px 0 0 rgba(0, 0, 0, 1), 34px 33px 0 0 rgba(0, 0, 0, 1), 35px 33px 0 0 rgba(0, 0, 0, 1), 42px 33px 0 0 rgba(0, 0, 0, 1), 13px 34px 0 0 rgba(0, 0, 0, 1), 29px 34px 0 0 rgba(0, 0, 0, 1), 35px 34px 0 0 rgba(0, 0, 0, 1), 36px 34px 0 0 rgba(0, 0, 0, 1), 27px 35px 0 0 rgba(0, 0, 0, 1), 36px 35px 0 0 rgba(0, 0, 0, 1), 41px 35px 0 0 rgba(0, 0, 0, 1), 14px 36px 0 0 rgba(0, 0, 0, 1), 25px 36px 0 0 rgba(0, 0, 0, 1), 36px 36px 0 0 rgba(0, 0, 0, 1), 40px 36px 0 0 rgba(0, 0, 0, 1), 16px 37px 0 0 rgba(0, 0, 0, 1), 22px 37px 0 0 rgba(0, 0, 0, 1), 37px 37px 0 0 rgba(0, 0, 0, 1), 38px 37px 0 0 rgba(0, 0, 0, 1), 39px 37px 0 0 rgba(0, 0, 0, 1);height: 1px; width: 1px;
+        }
+      }
+
+    /* fin pixel art to css + animation */
+    
+    /* sélecteurs selon la structure */
+    
+    body{
+        margin: 0;
+    }
+    
+    body > header{
+        background-color: var(--header-bg-color);
+        color: var(--header-font-color);
+        display: flex;
+        height: 25vh;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        background-image: url('../images/gundam-01-header.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    
+    body > header.homepage{
+        height: calc( 100vh - var(--nav-ul-line-height) ) ;
+    }
+    
+    body > header > div > *{
+        text-shadow: 0 0 10px var(--header-bg-color) ;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+    
+    body > nav{
+        background-color: var(--nav-bg-color);
+    }
+    
     body > nav ul{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    body > nav a{
-        padding-right: 1rem;
-    }
-
-    article aside{
-        width: var(--col-1-2);
-       }
-
-       .liste-c{
-        column-count: 2;
-    }
-}
-
-@media screen and (min-width: 992px){
-    .homepage h1{
-        font-size: 4rem;
+        margin: 0 auto;
+        list-style-type: none;
+        padding: 0;
+        line-height: var(--nav-ul-line-height);
+        width: 100%;
     }
     
-    body > header.homepage h2{
-        font-size: 3rem;
+    body > nav a{
+        display: block;
+        padding-left: 1rem;
     }
-
-    body > main,
-    body > nav ul, 
+    
+    body > nav a,
+    body > nav a:visited{
+        font-family: var(--heading-font);
+        text-decoration: none;
+        color: var(--nav-link-color);
+    }
+    
+    body > nav a:hover,
+    body > nav a:focus{
+        background-color: var(--nav-bg-color-hover);
+    }
+    
+    body > main, 
     body > footer > *{
-        max-width: 960px;
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    body > footer{
+        background-color: var(--header-bg-color);
+        color: var(--header-font-color);
+    }
+    
+    body > footer ul{
+        list-style-type: none;
+        line-height: var(--nav-ul-line-height);
+    }
+    
+    body > footer ul a, 
+    body > footer ul a:visited{
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: var(--nav-link-color);
+    }
+    
+    body > footer ul a:hover,
+    body > footer ul a:focus{
+        color: var(--orange-gundam);
+    }
+    
+    body > main > section > *{
+        border-width: var(--elt-sct-border-width);
+        border-style: solid;
+        border-color: var(--elt-sct-border-color);
+        border-radius: var(--elt-sct-border-radius);
+    }
+    
+    .translation{
+        transition: transform 0.5s, background-color 0.5s, box-shadow 1s 0.5s ;
+    }
+    
+    .translation:hover{
+        transform: translate(30px, -30px);
+        background-color: #625D73;
+        box-shadow: 5px 5px 0 black;
+    }
+    
+    .scale{
+        transition: transform 0.1s;
+    }
+    
+    .scale:hover{
+        transform: scale(1.005);
+    }
+    
+    article.article{
+        width: var(--col-1-1);
+        margin: var(--y-gutter) var(--x-gutter);
+        padding: 1rem;
+    }
+    
+    /* css adaptatif */
+    /* usage de media queries */
+    /*
+    
+    les media queries permettent selon des valeurs de surrcharger du CSS existant ou d'ajouter des propriétés CSS
+    aux éléments
+    
+    */
+    
+    @media screen and (min-width: 576px){
+        
+        .homepage h1{
+            font-size: 3rem;
+        }
+        
+        /* dans un élément header avec la classe homepage, si un h2 fait partie de la descendance, j'applique */
+        body > header.homepage h2{
+            font-size: 2rem;
+        }
+    
+        body > main,
+        body > nav ul, 
+        body > footer > *{
+            max-width: 540px;
+        }
+    
+        body > footer > *{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    
+    }
+    
+    @media screen and (min-width: 768px){
+        .homepage h1{
+            font-size: 3.5rem;
+        }
+        
+        body > header.homepage h2{
+            font-size: 2.5rem;
+        }
+    
+        body > main,
+        body > nav ul, 
+        body > footer > *{
+            max-width: 720px;
+        }
+    
+        body > nav ul{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    
+        body > nav a{
+            padding-right: 1rem;
+        }
+    
+        article aside{
+            width: var(--col-1-2);
+           }
+    
+           .liste-c{
+            column-count: 2;
+        }
+    }
+    
+    @media screen and (min-width: 992px){
+        .homepage h1{
+            font-size: 4rem;
+        }
+        
+        body > header.homepage h2{
+            font-size: 3rem;
+        }
+    
+        body > main,
+        body > nav ul, 
+        body > footer > *{
+            max-width: 960px;
+        }
+    
+        body > main > section{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        body > main > section > *{
+            width: var(--col-1-2);
+            margin: var(--y-gutter) var(--x-gutter);
+        }
+    
+        article aside{
+            width: var(--col-1-3);
+           }
+    }
+    
+    @media screen and (min-width: 1200px){
+        .homepage h1{
+            font-size: 4.5rem;
+        }
+        
+        body > header.homepage h2{
+            font-size: 3.5rem;
+        }
+    
+        body > main,
+        body > nav ul, 
+        body > footer > *{
+            max-width: 1140px;
+        }
+    
+        body > main > section > *{
+            width: var(--col-1-3);
+            margin: var(--y-gutter) var(--x-gutter);
+        }
+    
+        .liste-c{
+            column-count: 3;
+        }
+    }
+    
+    @media screen and (min-width: 1400px){
+        .homepage h1{
+            font-size: 5rem;
+        }
+        
+        body > header.homepage h2{
+            font-size: 4rem;
+        }
+    
+        body > main,
+        body > nav ul, 
+        body > footer > *{
+            max-width: 1320px;
+        }
+    }
+    
+    @media screen and (min-width: 1600px){
+        .homepage h1{
+            font-size: 5.5rem;
+        }
+        
+        body > header.homepage h2{
+            font-size: 4.5rem;
+        }
+    
+        body > main,
+        body > nav ul, 
+        body > footer > *{
+            max-width: 1500px;
+        }
+    
+        article aside{
+            width: var(--col-1-4);
+           }
+    }
+    
+    
+}
+
+/* css pour l'impression des pages */
+/* usage de media queries */
+
+@media print{
+    body > header, body > nav, body > footer{
+        display: none;
     }
 
     body > main > section{
@@ -495,79 +687,18 @@ aux éléments
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    
-    body > main > section > *{
-        width: var(--col-1-2);
-        margin: var(--y-gutter) var(--x-gutter);
-    }
-
-    article aside{
-        width: var(--col-1-3);
-       }
-}
-
-@media screen and (min-width: 1200px){
-    .homepage h1{
-        font-size: 4.5rem;
-    }
-    
-    body > header.homepage h2{
-        font-size: 3.5rem;
-    }
-
-    body > main,
-    body > nav ul, 
-    body > footer > *{
-        max-width: 1140px;
-    }
 
     body > main > section > *{
         width: var(--col-1-3);
-        margin: var(--y-gutter) var(--x-gutter);
     }
 
-    .liste-c{
-        column-count: 3;
+    @page{
+        /* la taille de la page à l'impression ou le sens portrait / paysage */
+        size: portrait;
+        /* les marges */
+        margin: 5mm;
+        /* bleed => fond perdu */
+        bleed: 5mm;
     }
+
 }
-
-@media screen and (min-width: 1400px){
-    .homepage h1{
-        font-size: 5rem;
-    }
-    
-    body > header.homepage h2{
-        font-size: 4rem;
-    }
-
-    body > main,
-    body > nav ul, 
-    body > footer > *{
-        max-width: 1320px;
-    }
-}
-
-@media screen and (min-width: 1600px){
-    .homepage h1{
-        font-size: 5.5rem;
-    }
-    
-    body > header.homepage h2{
-        font-size: 4.5rem;
-    }
-
-    body > main,
-    body > nav ul, 
-    body > footer > *{
-        max-width: 1500px;
-    }
-
-    article aside{
-        width: var(--col-1-4);
-       }
-}
-
-
-
-/* css pour l'impression des pages */
-/* usage de media queries */
