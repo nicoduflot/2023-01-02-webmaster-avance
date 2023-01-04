@@ -5,39 +5,27 @@ tous les imports de css dans un autre CSS sont a déclarer ABSOLUMENT en début 
 
 /*
 Commentaire en CSS
-
 Sur cette feuille de style, on déclare les propriétés CSS que l'on appliquera à divers éléments de la page 
 html à laquelle cette feuille est liée (link)
-
 Le CSS (Cascading Style Sheet) ou Feuille de Style en Cascade fonctionne par héritage : 
 ce qui est déclaré pour une balise, sera par défaut reçu en héritage
 par les balises qu'elle contient.
-
 <body>
     <header>
         <h1>Titre</h1>
     </header>
 </body>
-
 si je déclare la police de caractère Arial pour body, automatiquement header et h1 utiliseront aussi cette police (héritage).
-
 Si je voulais que h1 utilise une autre police, je dois créer une règles CSS précisant la police qui serautilisée par h1
-
 Le CSS s'applique sur les éléments HTML à l'aide de sélecteurs
-
 on peut décrire un sélécteur à l'aide des balises impactés, ou par des classes appliquées à un élément, ou en utilisant un identifiant d'élément
-
 On peut même combiner toutes ces manières pour être très précis dans les éléments qui seront impactés par les déclarations CSS
-
 une classe est préfixée d'un point
 .rouge-gras => la classe qui s'appelle "rouge-gras" dans l'élément l'attribut utilisé class="rouge-gras"
-
 On peut aussi sélectionner un élément par son identifiant (attribut id)
 un ID, quant il est appelé en sélecteur CSS, est préfixé d'un #
 #navigation-principale => l'élément de la page qui possède id="navigation-principale"
-
 Au niveau de la sélection par balise, il existe une sorte de décriture qui différencie les descendants directs d'éléments aux descendant plus ou moins directs d'un élément
-
 body > nav => les éléments html <nav> enfant directs (fils ou fille) de l'élément body
 <body>
     <nav>
@@ -49,7 +37,6 @@ body > nav => les éléments html <nav> enfant directs (fils ou fille) de l'él�
         </nav>
     </main>
 </body>
-
 body nav => les éléments html <nav> enfant directs ou indirects (fils ou fille, petit fils, arrière ) de l'élément body
 <body>
     <nav>
@@ -61,7 +48,6 @@ body nav => les éléments html <nav> enfant directs ou indirects (fils ou fille
         </nav>
     </main>
 </body>
-
 */
 
 
@@ -75,7 +61,6 @@ rem     =>  cadratin racine : se calcul par rapport à la taille racine de polic
 vw & vh =>  viewport width & viewport height : correspond à la taille 
 d'affichage de la page en largeur et en hauteur
 si affichage en largeur 768px alors 20vw = 153.6 px
-
 si 2em = 32 px, 1em = 16px
 */
 
@@ -86,9 +71,6 @@ si 2em = 32 px, 1em = 16px
     --blanc-gundam: #F2F2F2;
     --noir-gundam: #0D0D0D;
     --gris-gundam: #625D73;
-    --gris-gundam-50p: rgba(98, 93, 115, 0.5);
-    --gris-gundam-25p: rgba(98, 93, 115, 0.25);
-    --gris-gundam-125p: rgba(98, 93, 115, 0.125);
     font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
     --general-font-color: var(--noir-gundam);
@@ -102,8 +84,6 @@ si 2em = 32 px, 1em = 16px
     --nav-link-color: var(--blanc-gundam);
     --nav-link-color-hover: var(--blanc-gundam);
     --nav-ul-line-height: 2.2rem;
-    --main-link-color: var(--rouge-gundam);
-    --main-link-color-hover: var(--orange-gundam);
     /* largeur de goutière */
     --x-gutter: 0.5rem;
     --y-gutter: 0.5rem;
@@ -118,7 +98,6 @@ si 2em = 32 px, 1em = 16px
     --elt-sct-border-color: var(--gris-gundam);
     --elt-sct-border-width: 2px;
     --elt-sct-border-radius: 5px;
-    --aside-article-bg: var(--gris-gundam-125p);
 }
 
 /* 
@@ -128,14 +107,6 @@ par rapport à l'extérieur des bordures (border-box) et non par rapport au cont
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-q::before{
-    content: "<<";
-}
-
-q::after{
-    content: ">>";
 }
 
 img {
@@ -149,6 +120,10 @@ h4,
 h5,
 h6{
     font-family: var(--heading-font);
+}
+
+figure {
+   
 }
 
 /* exemple de lettrine */
@@ -165,73 +140,6 @@ p::first-letter{
 }
 */
 
-article aside{
- background-color: var(--aside-article-bg);
- padding: 0.2rem;
- width: var(--col-1-1);
- border-radius: var(--elt-sct-border-radius);
-}
-
-article aside h3,
-article aside figure{
-    text-align: center;
-}
-
-article aside table{
-    border-collapse:collapse;
-    width: 100%;
-}
-
-article aside table caption{
-    text-transform: uppercase;
-    font-weight: bold;
-    background-color: var(--rouge-gundam);
-    color: var(--blanc-gundam);
-    padding: 5px;
-}
-
-article aside table th{
-    text-align: left;
-    vertical-align:top;
-}
-
-article aside table th,
-article aside table td{
-    padding: 0.5rem;
-}
-
-/* 
-les lignes dans le tableau qui sont impaire 
-tr:nth-child(odd)
-
-tr => ligne
-nth-child() => tous les n éléments cités (ici la ligne tr)
-odd => impaire
-
-si on veux le faire sur les éléments paire => even
-
-si on veux tous les 3 éléments, 3n 
-
-si 3n + 1
-tous les trois éléments en commençant par la prmière ligne
-
-si n = 0
- 3*0 + 1 donc la ligne 1
-
- si 3n + 2
-tous les trois éléments en commençant par la deuxième ligne
-
-si n = 0
- 3*0 + 2 donc la ligne 2
-
-quand on utilise n, 2n correspond à paire, 2n + 1 correspond à impaire
-
-*/
-article aside table tr:nth-child(odd){
-    background-color: var(--gris-gundam-25p);
-}
-
-
 /* classes, pseudo classes et selecteurs id */
 
 .deuxEm{
@@ -242,49 +150,21 @@ article aside table tr:nth-child(odd){
     font-size: 2rem;
 }
 
-
-.right{
+.right {
     float: right;
-    margin: 0 1rem;
 }
 
-.left{
+.left {
     float: left;
-    margin: 0 1rem;
 }
-
-.clear{
-    clear: both;
+.illustration {
+   width: var(--col-1-3);
+    background-color: var(--rouge-gundam);
+   border: 2px solid transparent;
+   border-radius: 10px;
+   padding: 5px;
+  
 }
-
-main a, main a:visited{
-    text-decoration: none;
-    color: var(--main-link-color);
-    font-weight: bold;
-}
-
-main a:hover{
-    color: var(--main-link-color-hover);
-}
-
-.figure-article{
-    width: var(--col-1-3);
-}
-
-table.box-office{
-    border-collapse: collapse;
-}
-
-table.box-office thead,
-table.box-office tfoot{
-    background-color: var(--aside-article-bg);
-}
-
-table.box-office td{
-    vertical-align: top;
-    padding: 5px;
-}
-
 /* sélecteurs selon la structure */
 
 body{
@@ -384,19 +264,30 @@ body > main > section > *{
     border-radius: var(--elt-sct-border-radius);
 }
 
+
 article.article{
     width: var(--col-1-1);
-    margin: var(--y-gutter) var(--x-gutter);
+   margin: var(--y-gutter) var(--x-gutter);
     padding: 1rem;
+    
 }
+
+body > main article.article >  main > aside {
+
+    border: #0D0D0D solid 1px;
+    margin-left: 50px;
+    padding: 5px;
+
+}
+
+
+
 
 /* css adaptatif */
 /* usage de media queries */
 /*
-
 les media queries permettent selon des valeurs de surrcharger du CSS existant ou d'ajouter des propriétés CSS
 aux éléments
-
 */
 
 @media screen and (min-width: 576px){
@@ -421,7 +312,6 @@ aux éléments
         flex-wrap: wrap;
         justify-content: space-between;
     }
-
 }
 
 @media screen and (min-width: 768px){
@@ -447,14 +337,6 @@ aux éléments
 
     body > nav a{
         padding-right: 1rem;
-    }
-
-    article aside{
-        width: var(--col-1-2);
-       }
-
-       .liste-c{
-        column-count: 2;
     }
 }
 
@@ -483,10 +365,24 @@ aux éléments
         width: var(--col-1-2);
         margin: var(--y-gutter) var(--x-gutter);
     }
-
-    article aside{
+    body > main article.article >  main > aside {
         width: var(--col-1-3);
-       }
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+    
+    body > main article.article >  main > aside H4 {
+    padding-top: 0;  
+    
+    width: var(--col-1-2);
+    }
+    
+    body > main article.article >  main > aside p {
+    
+    width: var(--col-1-2);
+    
+    }
 }
 
 @media screen and (min-width: 1200px){
@@ -507,10 +403,6 @@ aux éléments
     body > main > section > *{
         width: var(--col-1-3);
         margin: var(--y-gutter) var(--x-gutter);
-    }
-
-    .liste-c{
-        column-count: 3;
     }
 }
 
@@ -544,13 +436,7 @@ aux éléments
     body > footer > *{
         max-width: 1500px;
     }
-
-    article aside{
-        width: var(--col-1-4);
-       }
 }
-
-
 
 /* css pour l'impression des pages */
 /* usage de media queries */
