@@ -80,6 +80,6 @@ mini exercice :
 créer une variable avec un nombre
 créer une variable avec du texte
 afficher les variables en console
-afficher le résultat de la variable nombre + 3
-afficher la variable texte et le résultat de la variable nombre -6
+afficher le résultat de la variable nombre + 3 en console
+afficher la variable texte et le résultat de la variable nombre -6 en console
 */
