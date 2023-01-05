@@ -172,10 +172,68 @@ connServeur('192.168.0.1', 'X-fgg:tri');
  *  incrémentation
  *  let i = 0;
  *  i = i + 1;
- *  i++ ou ++i
+ *  i++ ou ++i;
  * 
  *  i = 5;
  *  i = i - 1;
  *  => i-- ou --i;
  * 
 */
+
+let nombreIncrement = 11;
+console.log(`nombreIncrement : ${nombreIncrement}`);    /* affiche 11 */
+console.log(`nombreIncrement : ${nombreIncrement++}`);  /* affiche 11 puis ajoute 1 à nombreIncrement */
+console.log(`nombreIncrement : ${nombreIncrement}`);    /* affiche 12 */
+console.log(`nombreIncrement : ${++nombreIncrement}`);  /* ajoute 1 à nombreIncrement puis affiche 13 */
+
+/* 
+camelCase
+*/
+
+/**
+ * Opérateurs logiques
+ * 
+ *  && (ET)
+ *  (si les conditions du ET sont toutes vraie, le test renvoi vrai)
+ *  (si au moins une des condition du test est fausse, le test renvoi faux)
+ *  true && true => true
+ *  true && false => false
+ *  false && true => false
+ *  false && false => false
+ * 
+ *  || (OU)
+ *  (si au moins une des conditions du test est vraie, le resultat du test est vrai)
+ *  true || true => true
+ *  true || false => true
+ *  false || true => true
+ *  false || false => false
+ * 
+ *  ! (NON)
+ *  a = true, !a = false
+ * 
+ *  ^ (XOR : OU exclusif binaire)
+ * (si au moins une des condition est vrai, le résultat renvoi vrai, MAIS si toutes les condition sont vrai, le resultat du test est faux)
+ * true ^ true => false
+ * true ^ false => true
+ * false ^ true => true
+ * false ^ false => false 
+ * 
+ * Comparaison
+* 
+* <  > <=  >= comparateurs infériorité, supériorité
+* 
+* == égale en valeur (non strict)
+* != différend en valeur (non strict)
+* 
+* === égale en valeur et en type (stricte)
+* !== différent en valeur et en type (stricte)
+ */
+
+console.log(2 == 2);
+console.log(2 == '2');
+console.log(2 === 2);
+console.log(2 === '2');
+console.log(2 != 2);
+console.log(2 != '2');
+console.log(2 !== 2);
+console.log(2 !== '2');
