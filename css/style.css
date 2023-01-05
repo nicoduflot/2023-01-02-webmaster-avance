@@ -183,6 +183,11 @@ p::first-letter{
 }
 */
 
+h2[onclick]{
+    /* le selecteur css signifie une balise h2 avec l'attribut onclick */
+    cursor: pointer;
+}
+
 @media screen{
     article aside{
      background-color: var(--aside-article-bg);

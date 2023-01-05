@@ -7,11 +7,14 @@
     <meta name="description" content="Site de la formation webmaster avancé" />
     <title>Journal du geek</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <script>
+        console.log('début du chargement de la page');
+    </script>
     <script src="./js/dom.js"></script>
 </head>
 
 <body>
-    <header class="">
+    <header>
         <div>
             <h1>Journal du geek</h1>
             <h2>Manges ma pop-culture</h2>
@@ -31,7 +34,7 @@
         <section>
             <article>
                 <header>
-                    <h2>Document Object Model</h2>
+                    <h2 onclick="alert('ben dit donc');">Document Object Model</h2>
                 </header>
                 <main>
                     <p>
@@ -64,10 +67,12 @@
             </article>
             <article>
                 <header>
-                    <h2></h2>
+                    <h2>Le paragraphe survolé : </h2>
                 </header>
                 <main>
-                    
+                    <div id="pSurvol">
+                        
+                    </div>
                 </main>
             </article>
             <article>
@@ -116,5 +121,7 @@
         </div>
     </footer>
 </body>
-
+<script>
+    console.log('fin de chargement de la page');
+</script>
 </html>
