@@ -284,3 +284,13 @@ for(let i = 0; i < cars.length; i++){
         console.log('on a trouvé la moto');
     }
 }
+
+/*
+Pour ( i égal à 0; tant que i est strictement inférieur nb elem de cars; i incrémente de un) alors
+    afficher i = valeur de i, cars[i] égale valeur cars[i]
+    si(valeur cars[i] est égal à 'Yamaha) alors
+        afficher on a trouvé la moto
+    Fin Si
+Fin pour
+*/
+
