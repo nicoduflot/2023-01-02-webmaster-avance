@@ -63,3 +63,23 @@ console.log(1 + 3);
 console.log(nom + 3);
 console.log(prenom + 3);
 console.log('écrire du texte avec l\'apostrophe');
+prenom = 'Jean';
+console.log('Bonjour ' + prenom + ' ' + nom + ', comment vas-tu ?' ); 
+/* 
+concaténation variables et texte 'à l'ancienne' 
+on va utiliser un méthode plus fluide pour cela : l'interpolation de texte
+on va entourer le texte non plus de quote ', mais par des backquotes ` accent grave tout seul 
+
+*/
+console.log(`Bonjour ${prenom} ${nom}, comment vas-tu ?` );
+console.log(`écrire du texte avec l'apostrophe`); /* cette écriture sans variable est tolérée */
+console.log(`la somme de 2 + 3 = ${2+3}` );
+
+/*
+mini exercice : 
+créer une variable avec un nombre
+créer une variable avec du texte
+afficher les variables en console
+afficher le résultat de la variable nombre + 3
+afficher la variable texte et le résultat de la variable nombre -6
+*/
