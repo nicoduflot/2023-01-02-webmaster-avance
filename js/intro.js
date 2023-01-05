@@ -237,3 +237,50 @@ console.log(2 != 2);
 console.log(2 != '2');
 console.log(2 !== 2);
 console.log(2 !== '2');
+
+/**
+ * Les tableaux en JS
+ * 
+ * Avant es6, pour créer un tableau 
+ * 
+ * let tab = new Array('aze', 'tyu', 12);
+ * 
+ * depuis es6
+ * let tab = ['aze', 'tyu', 12];
+ */
+
+let cars = ['Peugeot', 'Citroën', 'Ford', 'Renault'];
+/**
+ * 
+ * les données sont stocké dans la variable à des indices, les indices d'un tableau commencent à 0
+ * 
+ */
+console.log(cars);
+console.log(cars[2]); /* affiche Ford */
+console.log(`Le tableau cars contient ${cars.length} élément(s)`);
+
+cars.push('Hyundai');
+console.log(cars);
+console.log(`Le tableau cars contient ${cars.length} élément(s)`);
+
+cars.push('Yamaha', 'Kawasaki');
+console.log(cars);
+console.log(`Le tableau cars contient ${cars.length} élément(s)`);
+
+/* les tableaux sont itérables => on peut parcourir chacun des éléments à l'intérieur à l'aide de boucles */
+
+/*
+une boucle permet de parcourir les élément itérables selon un pas (tout les x éléments)
+*/
+
+/*
+'Peugeot', 'Citroën', 'Ford', 'Renault', 'Hyundai', 'Yamaha', 'Kawasaki'
+*/
+
+console.log('------------- la boucle for --------------');
+for(let i = 0; i < cars.length; i++){
+    console.log(`i = ${i}, cars[i] => cars[${i}] : ${cars[i]}`);
+    if(cars[i] === 'Yamaha'){
+        console.log('on a trouvé la moto');
+    }
+}
