@@ -249,7 +249,7 @@ console.log(2 !== '2');
  * let tab = ['aze', 'tyu', 12];
  */
 
-let cars = ['Peugeot', 'Citroën', 'Ford', 'Renault'];
+let cars = ['Peugeot', 'Citroën', 'BMW', 'Ford', 'Renault'];
 /**
  * 
  * les données sont stocké dans la variable à des indices, les indices d'un tableau commencent à 0
@@ -294,3 +294,180 @@ Pour ( i égal à 0; tant que i est strictement inférieur nb elem de cars; i in
 Fin pour
 */
 
+console.log('------------- la boucle for in --------------');
+for(index in cars){
+    console.log(`dans cars; à l'index ${index}, la valeur est ${cars[index]}`);
+}
+
+console.log('------------- la boucle for of (es6) --------------');
+for(value of cars){
+    console.log(`la valeur actuelle dans cars est ${value}`);
+}
+
+console.log('-------------- boucle while ----------------');
+/*
+Tant que : 
+tant qu'une condition n'est pas atteinte, on effectue un comportement
+*/
+let cpt = 0;
+while(cars[cpt] !== 'Ford'){
+    console.log(cars[cpt]);
+    cpt++;
+}
+
+console.log(`Ford est présent dans le tableau à l'indice ${cpt}`);
+
+console.log('-------------- boucle do while ----------------');
+/*
+Faire Tant que : 
+le comportement est fait au moins une fois avant qu'une condition soit atteinte
+*/
+cpt = 0;
+do{
+    console.log(cars[cpt]);
+    cpt++;
+}while(cpt < cars.length);
+
+console.log('-------------- .map() uniquement pour les tableaux ----------------');
+let tabNum = [1,2,3,4,5];
+console.log(tabNum);
+tabNum.map( function(valeur, index, tab){
+    tab[index] = valeur * 1.2;
+    console.log(`à l'index ${index}, la valeur : ${valeur}, le tableau est ${tab}`);
+});
+
+console.log(`à la fin du traitement, le tableau est ${tabNum}`);
+
+console.log('-------------- .forEach() ----------------');
+let tabNum2 = [1,2,3,4,5];
+console.log(tabNum2);
+tabNum2.forEach( function(valeur, index, tab){
+    tab[index] = valeur * 1.2;
+    console.log(`à l'index ${index}, la valeur : ${valeur}, le tableau est ${tab}`);
+});
+
+console.log(`à la fin du traitement, le tableau est ${tabNum2}`);
+
+// ajout d'éléments
+
+cars.push('Seat');
+cars.push('Fiat', 'Toyota');
+
+console.log(cars);
+
+// supprimer des valeurs dans un tableau
+// .pop(), .shift(), .splice()
+
+// .pop() => extrait du tableau la dernière valeur
+let extractLast = cars.pop();
+console.log(extractLast);
+console.log(cars);
+
+// .shift() => extrait la première valeur du tableau, réorganise les valeurs dans les index, supprime la dernière "case" du tableau
+let extractFirst = cars.shift();
+console.log(extractFirst);
+console.log(cars);
+
+// .splice() extrait une ou plusieurs valeur d'un tableau, et peut aussi réinsserer d'autre valeur à lapplace des données extraite.
+// .slice() 1 : extraire des valeur d'un tableau => retourne
+let removed = cars.splice(2, 2);
+console.log(removed);
+console.log(cars);
+
+//.splice() 2 : on enlève des valeur et à partir de la prmière valeur retirée, on ajoute X valeur
+console.log(cars.indexOf('Hyundai'));
+let replaced = cars.splice(cars.indexOf('Hyundai'), 2, 'Alpine', 'Mazda');
+console.log(replaced);
+console.log(cars);
+
+//.splice() 3 : pour inserrer des valeur dans un tableau sans en retirer
+cars.splice(cars.indexOf('Kawasaki'), 0, extractLast, extractFirst, removed[0], removed[1], replaced[0], replaced[1]);
+console.log(cars);
+
+// comment créer une copie d'un tableau
+// .slice()
+let carsClone = cars.slice();
+console.log(carsClone, cars);
+carsClone.push('Volkswagen');
+console.log(carsClone, cars);
+let tabSlice = cars.slice(2, 6);
+console.log(tabSlice, cars);
+
+// trier les tableau
+console.log(`avant le tri ascendant carsClone : ${carsClone}`);
+console.log(carsClone);
+carsClone.sort();
+console.log(`après le tri ascendant carsClone : ${carsClone}`);
+console.log(carsClone);
+
+carsClone.reverse(); /* ça ne tri pas le tableau, ça inverse les éléments */
+console.log(`après le tri descendant carsClone : ${carsClone}`);
+console.log(carsClone);
+
+// les conditions
+console.log('----------- la condition si (sinon) ---------------');
+// si (sinon)
+maValeur = 45;
+if (maValeur > 60) {
+    console.log('la valeur est supérieure à 60');
+} else {
+    console.log('la valeur est inférieure ou égale à 60');
+}
+
+if (maValeur < 60) {
+    console.log('la valeur est inférieur à 60');
+}
+
+console.log('----------- la condition selon une valeur switch ---------------');
+let monParfum = 'Chocolat';
+
+function testParfum(parfum) {
+    switch (parfum) {
+        case 'vanille':
+            console.log(`${parfum} rime avec gerbille`);
+            break;
+        case 'poire':
+        case 'malabar':
+            console.log(`${parfum} rime avec mangeoire`);
+            break;
+        case 'Chocolat':
+            console.log(`${parfum} rime avec beluga`);
+            break;
+        case 'Fraise':
+            console.log(`${parfum} rime avec balaise`);
+            break;
+        default:
+            console.log(`${parfum} n'est pas en vente chez nous`);
+    }
+}
+
+testParfum(monParfum);
+monParfum = 'malabar';
+testParfum(monParfum);
+testParfum('Rhum raisin');
+
+function testParfum2(parfum) {
+    let retourTest = null;
+    switch (parfum) {
+        case 'vanille':
+            retourTest = `${parfum} rime avec gerbille`;
+            break;
+        case 'poire':
+        case 'malabar':
+            retourTest = `${parfum} rime avec mangeoire`;
+            break;
+        case 'Chocolat':
+            retourTest = `${parfum} rime avec beluga`;
+            break;
+        case 'Fraise':
+            retourTest = `${parfum} rime avec balaise`;
+            break;
+        default:
+            retourTest = `${parfum} n'est pas en vente chez nous`;
+    }
+    return retourTest;
+}
+
+testParfum2('Chocolat'); // équivalent d'une variable qui contient le retour de la fonction
+
+console.log(testParfum2('Chocolat'));
