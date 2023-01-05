@@ -485,6 +485,7 @@ p::first-letter{
         border-style: solid;
         border-color: var(--elt-sct-border-color);
         border-radius: var(--elt-sct-border-radius);
+        padding: 1rem;
     }
     
     .translation{
