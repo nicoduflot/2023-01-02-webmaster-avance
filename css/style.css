@@ -193,6 +193,16 @@ table#jv{
     border-collapse: collapse;
 }
 
+/* selection de tous les paragraphes ayant un attribut nommé data-module */
+p[data-module]{
+    line-height: 1.5rem;
+}
+
+/* selection de tous les paragraphes ayant un attribut nommé data-module ayant la valeur color */
+p[data-module="color"]{
+    font-size: 1.2rem;
+}
+
 .overflow-y{
     height: 300px;
     overflow: auto;
