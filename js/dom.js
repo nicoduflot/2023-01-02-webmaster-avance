@@ -1,4 +1,47 @@
+function createJVRows(tabInfos){
+    /* on crée un élément tbody qui va contenir les informations du jv sélectionné */
+    console.log(tabInfos);
+    let tbody = document.createElement('tbody');
 
+    /* on crée la ligne qui affiche l'année du jv */
+    let trAnnee = document.createElement('tr');
+
+    /* on crée la th qui contient l'étiquette de la donnée */
+    let thAnnee = document.createElement('th');
+
+    /* on ajoute le texte de la th */
+    thAnnee.innerHTML = 'Année de sortie';
+
+    /* on ajoute la th année à la tr année */
+    trAnnee.append(thAnnee);
+
+    /* on crée la td année qui contiendra l'année du JV */
+    let tdAnnee = document.createElement('td');
+
+    /* l'année du JV est à l'indic 0 du tableau tabInfo, on l'ajoute dans le html de la td année */
+    tdAnnee.innerHTML = tabInfos[0];
+
+    /* on ajoute la td année à la tr année */
+    trAnnee.append(tdAnnee);
+
+    /* on crée la ligne (tr) du titre du JV */
+    let trTitre = document.createElement('tr');
+    let thTitre = document.createElement('th');
+    thTitre.innerHTML = 'Titre';
+    trTitre.append(thTitre);
+    let tdTitre = document.createElement('td');
+    tdTitre.innerHTML = tabInfos[1];
+    trTitre.append(tdTitre);
+
+    let trGenre = document.createElement('tr');
+    let trPlateFormes = document.createElement('tr');
+    let trDistributeur = document.createElement('tr');
+
+    tbody.append(trAnnee);
+    tbody.append(trTitre);
+
+    return tbody;
+}
 
 window.addEventListener('DOMContentLoaded', function(){
     console.log('maintenant que le dom est chargé, on peut manipuler la page');
@@ -72,11 +115,19 @@ window.addEventListener('DOMContentLoaded', function(){
         jeuVideo.addEventListener('click', function(){
             document.getElementById('infoJeu').classList.remove('hidden');
             //console.log(jeuVideo.childNodes);
+            /* on crée une variable tableau dans laquelle on ajoutera les information des td du tr */
+            let tabInfosJeu = [];
             jeuVideo.childNodes.forEach(function(element){
                 if(element.nodeName === 'TD'){
                     //console.log(element.innerText);
+                    tabInfosJeu.push(element.innerText);
                 }
             });
+            //console.log(tabInfosJeu);
+            /* on retire le tbody du tableau de résultat */
+            document.querySelector('#infoJeu tbody').remove();
+            /* on appelle la fonction de création du tableau de résultat avec les données collectées dans le tableau tabInfosJeu */
+            document.querySelector('#infoJeu').append(createJVRows(tabInfosJeu));
         });
     });
 
