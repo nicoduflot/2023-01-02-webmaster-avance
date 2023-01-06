@@ -188,25 +188,25 @@ h2[onclick]{
     cursor: pointer;
 }
 
-table#mediatheque{
+table#jv{
     width: 95%;
     border-collapse: collapse;
 }
 
-table#mediatheque thead{
+table#jv thead{
     background-color: var(--header-bg-color);
     color: var(--header-font-color);
 }
 
-table#mediatheque th{
+table#jv th{
     min-width: 50px;
 }
 
-table#mediatheque tbody tr:nth-child(even){
+table#jv tbody tr:nth-child(even){
     background-color: var(--gris-gundam-25p);
 }
 
-table#mediatheque td{
+table#jv td{
     padding: 1rem;
 }
 
@@ -267,6 +267,10 @@ table#p4 th{
 
     .col-2-3{
         width: var(--col-2-3);
+    }
+
+    .col-1-3{
+        width: var(--col-1-3);
     }
     
     /* 
