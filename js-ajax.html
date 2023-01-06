@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Site de la formation webmaster avancé" />
+    <title>Journal du geek</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+        console.log('début du chargement de la page');
+    </script>
+    <script src="./js/ajax.js"></script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Journal du geek</h1>
+            <h2>Manges ma pop-culture</h2>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index.html" title="lien vers Accueil">Accueil</a></li>
+            <li><a href="./article.html" title="lien vers article">Article</a></li>
+            <li><a href="./article-exo.html" title="lien vers article">Article exo</a></li>
+            <li><a href="./javascript.html" title="lien vers js intro">JS Intro</a></li>
+            <li><a href="./js-dom.html" title="lien vers js dom">JS DOM</a></li>
+            <li><a href="./js-ajax.html" title="lien vers js ajax">JS Ajax</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <article>
+                <header>
+                    <h2>
+                        AJAX - Fetch
+                    </h2>
+                </header>
+                <main>
+                    <h3>xhr : Xml Http Request</h3>
+                    <p>
+                        <button class="btn btn-secondary btn-sm read" data-url="../ressource/users.json">
+                            Users.json
+                        </button>
+                        <button class="btn btn-secondary btn-sm read" data-url="../resources/users.json">
+                            Users.json erreur
+                        </button>
+                    </p>
+                </main>
+            </article>
+            <article class="col-2-3">
+                <header>
+                    <h2>Les données appelées par fetch</h2>
+                </header>
+                <main>
+                    <table class="table rayure hidden" id="result">
+                        <thead class="table-dark">
+    
+                        </thead>
+                        <tbody>
+    
+                        </tbody>
+                    </table>
+                </main>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <nav>
+                <h3>Sitemap</h3>
+                <ul>
+                    <li><a href="./index.html" title="lien vers Accueil">Accueil</a></li>
+                    <li><a href="./article.html" title="lien vers article">Article</a></li>
+                    <li><a href="./article-exo.html" title="lien vers article">Article exo</a></li>
+                    <li><a href="./javascript.html" title="lien vers js intro">JS Intro</a></li>
+
+                    <li><a href="./js-dom.html" title="lien vers js dom">JS DOM</a></li>
+                    <li><a href="./js-ajax.html" title="lien vers js ajax">JS Ajax</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <h3>Liens Intitutionnels</h3>
+                <ul>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="#">CGU</a></li>
+                    <li><a href="#">CGV</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <h3>Liens divers</h3>
+                <ul>
+                    <li><a href="#">lien test</a></li>
+                    <li><a href="#">lien test</a></li>
+                    <li><a href="#">lien test</a></li>
+                    <li><a href="#">lien test</a></li>
+                    <li><a href="#">lien test</a></li>
+                    <li><a href="#">lien test</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+<script>
+    console.log('fin de chargement de la page');
+</script>
+
+</html>
