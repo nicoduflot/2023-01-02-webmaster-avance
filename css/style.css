@@ -203,6 +203,14 @@ p[data-module="color"]{
     font-size: 1.2rem;
 }
 
+.rouge{
+    background-color: darkred;
+}
+
+.jaune{
+    background-color: var(--orange-gundam);
+}
+
 .overflow-y{
     height: 300px;
     overflow: auto;

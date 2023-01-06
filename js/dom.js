@@ -281,39 +281,60 @@ window.addEventListener('DOMContentLoaded', function () {
     /* on récupère dans une variable une collection d'élément qui sont : les paragraphes possèdant un attribut nommé data-module */
     let allPModule = document.querySelectorAll('p[data-module]');
     //console.log(allPModule);
-    allPModule.forEach(function( paragraphe ){
+    allPModule.forEach(function (paragraphe) {
         //console.log(paragraphe.dataset.module);
-        switch(paragraphe.dataset.module){
+        switch (paragraphe.dataset.module) {
             case 'color':
                 // code
-                let color = paragraphe.dataset.color || '#ff0000' ;
+                let color = paragraphe.dataset.color || '#ff0000';
                 // gérer l'entrée de la souris sur le paragraphe
-                paragraphe.addEventListener('mouseover', function(){
+                paragraphe.addEventListener('mouseover', function () {
                     paragraphe.style.setProperty('color', color);
                 });
                 // gérer la sortie de la souris sur le paragraphe
-                paragraphe.addEventListener('mouseleave', function(){
+                paragraphe.addEventListener('mouseleave', function () {
                     paragraphe.style.removeProperty('color');
                 });
-            break;
+                break;
             case 'font':
             case 'magie':
                 //code
                 let weight = paragraphe.dataset.weight || '900';
                 // gérer l'entrée de la souris sur le paragraphe
-                paragraphe.addEventListener('mouseover', function(){
+                paragraphe.addEventListener('mouseover', function () {
                     paragraphe.style.setProperty('font-weight', weight);
                 });
                 // gérer la sortie de la souris sur le paragraphe
-                paragraphe.addEventListener('mouseleave', function(){
+                paragraphe.addEventListener('mouseleave', function () {
                     paragraphe.style.removeProperty('font-weight');
                 });
 
-            break;
+                break;
             case 'after':
             default:
-                // code par défaut, si on ne met rien il ne se passe rien
+            // code par défaut, si on ne met rien il ne se passe rien
         }
+    });
+
+    /*
+            grille "puissance 4"
+            */
+
+    // définir la première couleur
+    let colorNow = 'rouge';
+    document.querySelectorAll('#p4 th').forEach(function (tableCol) {
+        let colonne = 0;
+        tableCol.addEventListener('click', function () {
+            colonne = this.dataset.col;
+            for (i = 6; i > 0; i--) {
+                let cell = document.querySelector(`td[data-col="${colonne}"][data-row="${i}"]`);
+                if (!cell.classList.contains('rouge') && !cell.classList.contains('jaune')) {
+                    cell.classList.add(colorNow);
+                    colorNow = ('rouge' === colorNow) ? 'jaune' : 'rouge';
+                    break;
+                }
+            }
+        });
     });
 
 });
