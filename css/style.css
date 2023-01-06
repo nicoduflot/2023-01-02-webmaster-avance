@@ -193,6 +193,11 @@ table#jv{
     border-collapse: collapse;
 }
 
+.overflow-y{
+    height: 300px;
+    overflow: auto;
+}
+
 table#jv thead{
     background-color: var(--header-bg-color);
     color: var(--header-font-color);
@@ -202,10 +207,6 @@ table#jv th{
     min-width: 50px;
 }
 
-table#jv tbody{
-    height: 300px;
-    overflow: auto;
-}
 
 table#jv tbody tr:nth-child(even){
     background-color: var(--gris-gundam-25p);
