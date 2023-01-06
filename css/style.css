@@ -188,6 +188,47 @@ h2[onclick]{
     cursor: pointer;
 }
 
+table#mediatheque{
+    width: 95%;
+    border-collapse: collapse;
+}
+
+table#mediatheque thead{
+    background-color: var(--header-bg-color);
+    color: var(--header-font-color);
+}
+
+table#mediatheque th{
+    min-width: 50px;
+}
+
+table#mediatheque tbody tr:nth-child(even){
+    background-color: var(--gris-gundam-25p);
+}
+
+table#mediatheque td{
+    padding: 1rem;
+}
+
+table#p4{
+    width: 95%;
+    border-collapse: collapse;
+}
+
+table#p4 td, table#p4 th{
+    border: 1px solid var(--gris-gundam-50p);
+    height: 40px;
+}
+
+table#p4 th{
+    background-color: var(--header-bg-color);
+    color: var(--header-font-color);
+    border: 1px solid var(--blanc-gundam);
+}
+
+
+
+
 @media screen{
     article aside{
      background-color: var(--aside-article-bg);
@@ -222,6 +263,10 @@ h2[onclick]{
     article aside table th,
     article aside table td{
         padding: 0.5rem;
+    }
+
+    .col-2-3{
+        width: var(--col-2-3);
     }
     
     /* 
