@@ -202,6 +202,11 @@ table#jv th{
     min-width: 50px;
 }
 
+table#jv tbody{
+    height: 300px;
+    overflow: auto;
+}
+
 table#jv tbody tr:nth-child(even){
     background-color: var(--gris-gundam-25p);
 }
