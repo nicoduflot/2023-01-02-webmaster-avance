@@ -1,29 +1,23 @@
 function createJVRows(tabInfos){
-    /* on crée un élément tbody qui va contenir les informations du jv sélectionné */
-    console.log(tabInfos);
-    let tbody = document.createElement('tbody');
 
+    /* création des lignes d'un JV */
+    /* on crée un élément tbody qui va contenir les informations du jv sélectionné */
+    //console.log(tabInfos);
+    let tbody = document.createElement('tbody');
     /* on crée la ligne qui affiche l'année du jv */
     let trAnnee = document.createElement('tr');
-
     /* on crée la th qui contient l'étiquette de la donnée */
     let thAnnee = document.createElement('th');
-
     /* on ajoute le texte de la th */
     thAnnee.innerHTML = 'Année de sortie';
-
     /* on ajoute la th année à la tr année */
     trAnnee.append(thAnnee);
-
     /* on crée la td année qui contiendra l'année du JV */
     let tdAnnee = document.createElement('td');
-
     /* l'année du JV est à l'indic 0 du tableau tabInfo, on l'ajoute dans le html de la td année */
     tdAnnee.innerHTML = tabInfos[0];
-
     /* on ajoute la td année à la tr année */
     trAnnee.append(tdAnnee);
-
     /* on crée la ligne (tr) du titre du JV */
     let trTitre = document.createElement('tr');
     let thTitre = document.createElement('th');
@@ -32,14 +26,39 @@ function createJVRows(tabInfos){
     let tdTitre = document.createElement('td');
     tdTitre.innerHTML = tabInfos[1];
     trTitre.append(tdTitre);
-
+    /* on crée la ligne (tr) du genre du JV */
     let trGenre = document.createElement('tr');
+    let thGenre = document.createElement('th');
+    thGenre.innerHTML = 'Genre';
+    trGenre.append(thGenre);
+    let tdGenre = document.createElement('td');
+    tdGenre.innerHTML = tabInfos[2];
+    trGenre.append(tdGenre);
+    /* on crée la ligne (tr) des plateformes du JV */
     let trPlateFormes = document.createElement('tr');
+    let thPlateFormes = document.createElement('th');
+    thPlateFormes.innerHTML = 'Plateformes';
+    trPlateFormes.append(thPlateFormes);
+    let tdPlateFormes = document.createElement('td');
+    tdPlateFormes.innerHTML = tabInfos[3];
+    trPlateFormes.append(tdPlateFormes);
+    /* on crée la ligne (tr) du distributeur du JV */
     let trDistributeur = document.createElement('tr');
+    let thDistributeur = document.createElement('th');
+    thDistributeur.innerHTML = 'Distributeur';
+    trDistributeur.append(thDistributeur);
+    let tdDistributeur = document.createElement('td');
+    tdDistributeur.innerHTML = tabInfos[4];
+    trDistributeur.append(tdDistributeur);
 
+    /* on ajoutes les lignes créées au tbody du tableau */
     tbody.append(trAnnee);
     tbody.append(trTitre);
+    tbody.append(trGenre);
+    tbody.append(trPlateFormes);
+    tbody.append(trDistributeur);
 
+    /* on renvoie le tbody à l'appel de la fonction */
     return tbody;
 }
 
