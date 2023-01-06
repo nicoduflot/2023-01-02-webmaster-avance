@@ -226,7 +226,34 @@ table#p4 th{
     border: 1px solid var(--blanc-gundam);
 }
 
+.table{
+    border-collapse: collapse;
+    width: 100%;
+}
 
+.table caption{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
+
+.table td, 
+.table th{
+    border: 1px solid black;
+}
+
+.table#infoJeu th{
+    width: 25%;
+}
+
+.table.rayure tbody tr:nth-of-type(odd){
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.hidden{
+    display: none;
+}
 
 
 @media screen{
